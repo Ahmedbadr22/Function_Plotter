@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="504.0" minWidth="831.0" prefHeight="504.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.badr.functionplotterapp.FunctionPlotterController">
+    <children>
+        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="831.0" style="-fx-background-color: #3F2B63;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label alignment="CENTER" text="Function Plotter" textAlignment="CENTER" textFill="#fafafa">
+                    <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/AppLogo.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="AmdtSymbols" size="15.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <SplitPane dividerPositions="0.31854352544007714" layoutX="3.0" layoutY="61.0" prefHeight="438.0" prefWidth="822.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55">
+            <AnchorPane maxWidth="280.0" minHeight="0.0" minWidth="280.0" prefHeight="442.0" prefWidth="198.0" style="-fx-background-color: #3F2B63;">
+                <children>
+                    <TextField id="equationTextField" fx:id="equationTextField" layoutX="30.0" layoutY="68.0" prefHeight="30.0" prefWidth="220.0" promptText="Equation ex : (x^2)" />
+                    <TextField id="maxXValueTextField" fx:id="maxXValueTextField" layoutX="30.0" layoutY="139.0" prefHeight="30.0" prefWidth="120.0" promptText="X max Value" />
+                    <TextField id="minXValueTextField" fx:id="minXValueTextField" layoutX="30.0" layoutY="209.0" prefHeight="30.0" prefWidth="120.0" promptText="X min Value" />
+                    <Button alignment="CENTER" layoutX="65.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#onPlotButtonClicked" prefHeight="30.0" prefWidth="150.0" text="Plot">
+                  <graphic>
+                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@images/function_plotter_icon.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+                    </Button>
+                    <Label layoutX="30.0" layoutY="45.0" prefHeight="18.0" prefWidth="150.0" text="Enter Equation :" textFill="#fcfcfc">
+                        <font>
+                            <Font name="Calibri" size="13.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="30.0" layoutY="116.0" prefHeight="22.0" prefWidth="178.0" text="Enter Max Value Of X :" textFill="#fcfcfc">
+                        <font>
+                            <Font name="Calibri" size="13.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="30.0" layoutY="186.0" prefHeight="22.0" prefWidth="178.0" text="Enter Min Value Of X :" textFill="#fcfcfc">
+                        <font>
+                            <Font name="Calibri" size="13.0" />
+                        </font>
+                    </Label>
+                </children></AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="230.0" prefWidth="300.0">
+                <children>
+                    <LineChart id="lineChart" fx:id="lineChartView" layoutX="22.0" layoutY="14.0" title="Graph" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis side="LEFT" />
+                        </yAxis>
+                    </LineChart>
+                </children></AnchorPane>
+        </SplitPane>
+    </children>
+</AnchorPane>
